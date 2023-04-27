@@ -1,0 +1,39 @@
+<div *ngFor="let contact of contacts">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title card-header" [ngStyle]="{'background-color': contact.color}">{{contact.fname}} {{contact.lname}}</h5>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text">Phone Number:</p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text">{{contact.phone}}</p>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text">Email:</p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text">{{contact.email}}</p>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text">Favorite Color:</p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text" [ngStyle]="{'color': contact.color}">{{contact.color}}</p>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-outline-primary" role="button" routerLink="/edit-contact/{{contact.id}}">Edit</a>
+                                <button type="button" class="btn btn-outline-danger" (click)="removeContact(contact)">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
